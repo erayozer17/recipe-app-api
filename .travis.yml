@@ -1,0 +1,12 @@
+language: python
+python:
+  # Altough we use 3.7, 3.6 was the latest stable build in travis now.
+  - "3.6"
+
+services:
+  - docker
+
+before_script: pip install docker-compose
+
+script:
+  - docker-compose run app sh -c "python manage.py test && flake8"
