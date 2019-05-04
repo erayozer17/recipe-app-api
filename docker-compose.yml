@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  app:
+    build:
+      # Context is the current directory.
+      context: .
+    ports:
+      - "8000:8000"
+    # Volumes, real time reload for code changes.
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+
+
+# first time use -> `docker-compose build`
+
+# creating django project -> 
+# `docker-compose run app sh -c "django-admin startproject app ."`
+
+#
