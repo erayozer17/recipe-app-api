@@ -14,7 +14,7 @@ services:
       sh -c "python manage.py runserver 0.0.0.0:8000"
 
 
-# first time use -> `docker-compose build`
+# first time use -> `docker-compose build` (also when dependencies are changed)
 
 # creating django project -> 
 # `docker-compose run app sh -c "django-admin startproject app ."`
