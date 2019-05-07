@@ -15,19 +15,19 @@ services:
              python manage.py migrate && 
              python manage.py runserver 0.0.0.0:8000"
     environment:
-      - DB_HOST=db
-      - DB_NAME=app
-      - DB_USER=postgres
-      - DB_PASS=supersecretpassword_dontusethisonprod
+      - DB_HOST
+      - DB_NAME
+      - DB_USER
+      - DB_PASS
     depends_on:
       - db
   
   db:
     image: postgres:10-alpine
     environment:
-      - POSTGRES_DB=app
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=supersecretpassword_dontusethisonprod
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
 
 
 # first time use -> `docker-compose build` (also when dependencies are changed)
